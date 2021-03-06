@@ -14,7 +14,7 @@ module.exports = {
     rules: [
       {
         // test → 検証
-        test: /\.css/,
+        test: /\.(css|sass|scss)/,
         // 定義したloaderは下から適用される
         use: [
           {
@@ -22,7 +22,10 @@ module.exports = {
           },
           {
             loader: 'css-loader'
-          }
+          },
+          {
+            loader: 'sass-loader'
+          },
         ]
       },
       {
