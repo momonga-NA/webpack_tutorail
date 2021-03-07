@@ -13,6 +13,18 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.js/,
+        exclude: /node_modules/,
+        use: [
+          {
+            loader: 'babel-loader',
+            options: {
+              presets: ['@babel/preset-env']
+            },
+          },
+        ],
+      },
+      {
         // test → 検証
         test: /\.(css|sass|scss)/,
         // 定義したloaderは下から適用される
